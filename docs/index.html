@@ -9,7 +9,7 @@
 <body>
   <header class="wrap header">
     <div>
-      <h1>ROIdle Crafting Shopping List</h1>
+      <h1>ROIdle Crafting Shopping List<span class=\"cursor\"></span></h1>
       <p class="muted">Pick crafted items, set quantities, and get a combined materials list.</p>
     </div>
     <div class="toggles">
@@ -22,6 +22,7 @@
         <span>Account for chance</span>
       </label>
     </div>
+    <button id="btnTheme" class="btn secondary" type="button" title="Toggle amber terminal theme">Toggle Amber</button>
   </header>
 
   <main class="wrap grid">
@@ -66,8 +67,8 @@
     </section>
   </main>
 
-  <footer class="wrap footer muted">
-    <p>Data from the <a href="https://roidle.com/" target="_blank" rel="noopener">ROIdle</a> game.
+  <footer class="wrap footer muted"> 
+    Data from <a href="https://roidle.com" target="_blank" rel="noopener">ROIdle</a>.
 </footer>
 
   <script src="./app.js"></script>

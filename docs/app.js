@@ -21,6 +21,7 @@ const els = {
   huntList: document.getElementById('huntList'),
   btnCopy: document.getElementById('btnCopy'),
   btnShare: document.getElementById('btnShare'),
+  btnTheme: document.getElementById('btnTheme'),
   btnExport: document.getElementById('btnExport'),
   btnClear: document.getElementById('btnClear'),
   toggleRecursive: document.getElementById('toggleRecursive'),
@@ -132,6 +133,21 @@ function fmtTime(totalSeconds){
   return `${sec}s`;
 }
 
+
+function applySavedTheme(){
+  try{
+    const t = localStorage.getItem('roidle_theme');
+    if (t === 'amber') document.body.classList.add('amber');
+  } catch(e){}
+}
+function toggleTheme(){
+  const isAmber = document.body.classList.toggle('amber');
+  try{
+    localStorage.setItem('roidle_theme', isAmber ? 'amber' : 'green');
+  } catch(e){}
+}
+
+
 function recipeName(rec){
   return rec?.name || itemName(rec?.outputItemId);
 }
@@ -199,6 +215,8 @@ function rebuildCategoryOptions(){
 }
 
 async function init(){
+  applySavedTheme();
+
   state.recipes = await loadJson('./data/craft_recipes.json');
 
   // itemsCatalog.json: array OR {data:[...]}
@@ -288,6 +306,8 @@ function wireUI(){
     els.btnCopy.textContent = 'Copied!';
     setTimeout(()=>els.btnCopy.textContent='Copy materials', 900);
   });
+
+  if (els.btnTheme) els.btnTheme.addEventListener('click', toggleTheme);
 
   els.btnShare.addEventListener('click', async () => {
     updateUrlFromCart();
