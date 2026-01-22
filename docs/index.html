@@ -27,10 +27,24 @@
   <main class="wrap grid">
     <section class="card">
       <h2>Add items</h2>
+
       <div class="row">
         <input id="search" class="input" placeholder="Search craftable items (e.g., Copper Dagger)" />
         <button id="btnClear" class="btn secondary" title="Clear cart">Clear</button>
       </div>
+
+      <div class="filters">
+        <label class="filter">
+          <span class="muted">Craft</span>
+          <select id="filterCraft" class="select"></select>
+        </label>
+
+        <label class="filter">
+          <span class="muted">Category</span>
+          <select id="filterCategory" class="select"></select>
+        </label>
+      </div>
+
       <div id="results" class="results"></div>
     </section>
 
@@ -50,7 +64,7 @@
   </main>
 
   <footer class="wrap footer muted">
-    <span>Data: <code>docs/data/craft_recipes.json</code>. Optional: add <code>docs/data/itemsCatalog.json</code> for nicer names.</span>
+    <span>Icons are loaded from ROIdle paths (<code>/assets/images/items</code> and <code>/assets/images/mobs</code>).</span>
   </footer>
 
   <script src="./app.js"></script>

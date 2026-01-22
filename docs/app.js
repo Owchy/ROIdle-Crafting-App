@@ -1,9 +1,12 @@
 // ROIdle Crafting Shopping List (GitHub Pages friendly)
-// Loads craft_recipes.json; optionally loads itemsCatalog.json (id -> name) if you add it.
+// Loads craft_recipes.json and itemsCatalog.json (id -> name).
+// Icons are loaded from the official ROIdle static paths:
+//   items: /assets/images/items/<itemId>.png
+//   mobs:  /assets/images/mobs/<monsterId>.png
 
 const state = {
   recipes: null,
-  itemsById: null, // optional
+  itemsById: null,
   cart: new Map(), // outputItemId -> qty
 };
 
@@ -17,6 +20,8 @@ const els = {
   btnClear: document.getElementById('btnClear'),
   toggleRecursive: document.getElementById('toggleRecursive'),
   toggleChance: document.getElementById('toggleChance'),
+  filterCraft: document.getElementById('filterCraft'),
+  filterCategory: document.getElementById('filterCategory'),
 };
 
 function fmt(n){ return new Intl.NumberFormat().format(n); }
@@ -31,7 +36,11 @@ function recipeName(rec){
 function craftKey(rec){
   const c = (rec?.craft || '').toString().trim();
   const cat = (rec?.category || '').toString().trim();
-  return [c, cat].filter(Boolean).join(' / ') || 'craft';
+  return { craft: c || '—', category: cat || '—' };
+}
+function itemIconUrl(itemId){
+  // Works when hosted on roidle.com OR any site (loads from roidle.com).
+  return `https://roidle.com/assets/images/items/${itemId}.png`;
 }
 
 // --- Data loading ---
@@ -41,10 +50,41 @@ async function loadJson(path){
   return await res.json();
 }
 
+function buildFilterOptions(){
+  const recs = Object.values(state.recipes.recipesByOutputItemId || {});
+  const crafts = new Set();
+  const cats = new Set();
+
+  for (const r of recs){
+    const k = craftKey(r);
+    if (k.craft && k.craft !== '—') crafts.add(k.craft);
+    if (k.category && k.category !== '—') cats.add(k.category);
+  }
+
+  const craftList = ['All', ...Array.from(crafts).sort((a,b)=>a.localeCompare(b))];
+  const catList = ['All', ...Array.from(cats).sort((a,b)=>a.localeCompare(b))];
+
+  els.filterCraft.innerHTML = '';
+  for (const c of craftList){
+    const opt = document.createElement('option');
+    opt.value = c;
+    opt.textContent = c;
+    els.filterCraft.appendChild(opt);
+  }
+
+  els.filterCategory.innerHTML = '';
+  for (const c of catList){
+    const opt = document.createElement('option');
+    opt.value = c;
+    opt.textContent = c;
+    els.filterCategory.appendChild(opt);
+  }
+}
+
 async function init(){
   state.recipes = await loadJson('./data/craft_recipes.json');
 
-  // Optional: itemsCatalog.json (array of {id,name,...} OR {data:[...]})
+  // itemsCatalog.json: array OR {data:[...]}
   try{
     const items = await loadJson('./data/itemsCatalog.json');
     const arr = Array.isArray(items) ? items : (Array.isArray(items?.data) ? items.data : null);
@@ -52,9 +92,10 @@ async function init(){
       state.itemsById = Object.fromEntries(arr.filter(x=>x?.id!=null).map(x => [String(x.id), x]));
     }
   } catch(e){
-    // ignore if missing
+    // optional but recommended
   }
 
+  buildFilterOptions();
   wireUI();
   render();
 }
@@ -76,6 +117,9 @@ function wireUI(){
       settings: {
         recursive: els.toggleRecursive.checked,
         accountForChance: els.toggleChance.checked,
+        filterCraft: els.filterCraft.value,
+        filterCategory: els.filterCategory.value,
+        search: els.search.value,
       },
       materials: computeMaterials(),
       generatedAt: new Date().toISOString(),
@@ -85,8 +129,8 @@ function wireUI(){
 
   els.toggleRecursive.addEventListener('change', render);
   els.toggleChance.addEventListener('change', render);
-
-  renderResults();
+  els.filterCraft.addEventListener('change', renderResults);
+  els.filterCategory.addEventListener('change', renderResults);
 }
 
 function downloadJson(obj, filename){
@@ -103,17 +147,29 @@ function allRecipes(){
   return Object.values(state.recipes.recipesByOutputItemId || {});
 }
 
+function passFilters(rec){
+  const { craft, category } = craftKey(rec);
+  const fc = els.filterCraft.value;
+  const fcat = els.filterCategory.value;
+  if (fc && fc !== 'All' && craft !== fc) return false;
+  if (fcat && fcat !== 'All' && category !== fcat) return false;
+  return true;
+}
+
 function renderResults(){
   const q = els.search.value.trim().toLowerCase();
   const list = allRecipes()
+    .filter(passFilters)
     .filter(r => (r?.name || '').toLowerCase().includes(q))
-    .slice(0, 60);
+    .slice(0, 80);
 
   els.results.innerHTML = '';
   if (!list.length){
     const div = document.createElement('div');
     div.className = 'muted';
-    div.textContent = q ? 'No matches.' : 'Type to search craftable items.';
+    div.textContent = (q || els.filterCraft.value !== 'All' || els.filterCategory.value !== 'All')
+      ? 'No matches for your filters.'
+      : 'Type to search craftable items.';
     els.results.appendChild(div);
     return;
   }
@@ -122,6 +178,16 @@ function renderResults(){
     const row = document.createElement('div');
     row.className = 'result';
 
+    const left = document.createElement('div');
+    left.className = 'resultLeft';
+
+    const img = document.createElement('img');
+    img.className = 'thumb';
+    img.loading = 'lazy';
+    img.src = itemIconUrl(rec.outputItemId);
+    img.alt = recipeName(rec);
+    img.onerror = () => { img.style.visibility = 'hidden'; };
+
     const meta = document.createElement('div');
     meta.className = 'meta';
 
@@ -129,12 +195,16 @@ function renderResults(){
     name.className = 'name';
     name.textContent = recipeName(rec);
 
+    const k = craftKey(rec);
     const pill = document.createElement('div');
     pill.className = 'pill';
-    pill.innerHTML = `<code>${craftKey(rec)}</code> <span>Output: ${fmt(rec.outputAmount || 1)}</span>`;
+    pill.innerHTML = `<code>${k.craft}</code><code>${k.category}</code><span>Output: ${fmt(rec.outputAmount || 1)}</span>`;
 
     meta.appendChild(name);
     meta.appendChild(pill);
+
+    left.appendChild(img);
+    left.appendChild(meta);
 
     const btn = document.createElement('button');
     btn.className = 'smallbtn';
@@ -145,7 +215,7 @@ function renderResults(){
       render();
     });
 
-    row.appendChild(meta);
+    row.appendChild(left);
     row.appendChild(btn);
     els.results.appendChild(row);
   }
@@ -168,20 +238,36 @@ function renderCart(){
     row.className = 'cartItem';
 
     const left = document.createElement('div');
-    left.style.display = 'flex';
-    left.style.flexDirection = 'column';
-    left.style.gap = '2px';
+    left.className = 'cartItemLeft';
+
+    const img = document.createElement('img');
+    img.className = 'thumb';
+    img.loading = 'lazy';
+    img.src = itemIconUrl(outputId);
+    img.alt = rec ? recipeName(rec) : itemName(outputId);
+    img.onerror = () => { img.style.visibility = 'hidden'; };
+
+    const text = document.createElement('div');
+    text.className = 'cartText';
 
     const title = document.createElement('div');
-    title.style.fontWeight = '600';
+    title.className = 'title';
     title.textContent = rec ? recipeName(rec) : itemName(outputId);
 
     const sub = document.createElement('div');
     sub.className = 'muted';
-    sub.textContent = rec ? craftKey(rec) : '—';
+    if (rec){
+      const k = craftKey(rec);
+      sub.textContent = `${k.craft} / ${k.category}`;
+    } else {
+      sub.textContent = '—';
+    }
 
-    left.appendChild(title);
-    left.appendChild(sub);
+    text.appendChild(title);
+    text.appendChild(sub);
+
+    left.appendChild(img);
+    left.appendChild(text);
 
     const right = document.createElement('div');
     right.style.display = 'flex';
@@ -282,7 +368,7 @@ function computeMaterials(){
 function computeMaterialsText(){
   const mats = computeMaterials();
   if (!mats.length) return 'No materials (empty list).';
-  return mats.map(m => `${m.name} ×${fmt(m.amount)} (id:${m.itemId})`).join('\n');
+  return mats.map(m => `${m.name} ×${fmt(m.amount)}`).join('\n'); // removed (id:xxx)
 }
 
 function renderMaterials(){
@@ -293,10 +379,43 @@ function renderMaterials(){
     els.btnExport.disabled = true;
     return;
   }
+
+  const mats = computeMaterials();
   els.materials.className = 'materials';
-  els.materials.textContent = computeMaterialsText();
-  els.btnCopy.disabled = false;
-  els.btnExport.disabled = false;
+  els.materials.innerHTML = '';
+
+  for (const m of mats){
+    const row = document.createElement('div');
+    row.className = 'matRow';
+
+    const left = document.createElement('div');
+    left.className = 'matLeft';
+
+    const img = document.createElement('img');
+    img.className = 'thumb';
+    img.loading = 'lazy';
+    img.src = itemIconUrl(m.itemId);
+    img.alt = m.name;
+    img.onerror = () => { img.style.visibility = 'hidden'; };
+
+    const name = document.createElement('div');
+    name.className = 'matName';
+    name.textContent = m.name;
+
+    left.appendChild(img);
+    left.appendChild(name);
+
+    const amt = document.createElement('div');
+    amt.className = 'matAmt';
+    amt.textContent = `×${fmt(m.amount)}`;
+
+    row.appendChild(left);
+    row.appendChild(amt);
+    els.materials.appendChild(row);
+  }
+
+  els.btnCopy.disabled = mats.length === 0;
+  els.btnExport.disabled = mats.length === 0;
 }
 
 function render(){
