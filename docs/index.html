@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ROIdle Crafting Shopping List</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="wrap header">
+    <div>
+      <h1>ROIdle Crafting Shopping List</h1>
+      <p class="muted">Pick crafted items, set quantities, and get a combined materials list.</p>
+    </div>
+    <div class="toggles">
+      <label class="toggle">
+        <input id="toggleRecursive" type="checkbox" checked />
+        <span>Expand sub-crafts</span>
+      </label>
+      <label class="toggle">
+        <input id="toggleChance" type="checkbox" />
+        <span>Account for chance</span>
+      </label>
+    </div>
+  </header>
+
+  <main class="wrap grid">
+    <section class="card">
+      <h2>Add items</h2>
+      <div class="row">
+        <input id="search" class="input" placeholder="Search craftable items (e.g., Copper Dagger)" />
+        <button id="btnClear" class="btn secondary" title="Clear cart">Clear</button>
+      </div>
+      <div id="results" class="results"></div>
+    </section>
+
+    <section class="card">
+      <h2>Your list</h2>
+      <div id="cart" class="cart empty muted">No items yet. Search on the left and add some.</div>
+      <div class="row actions">
+        <button id="btnCopy" class="btn" disabled>Copy materials</button>
+        <button id="btnExport" class="btn secondary" disabled>Export JSON</button>
+      </div>
+    </section>
+
+    <section class="card full">
+      <h2>Materials needed</h2>
+      <div id="materials" class="materials muted">Add items to see totals.</div>
+    </section>
+  </main>
+
+  <footer class="wrap footer muted">
+    <span>Data: <code>docs/data/craft_recipes.json</code>. Optional: add <code>docs/data/itemsCatalog.json</code> for nicer names.</span>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
