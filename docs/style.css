@@ -50,3 +50,15 @@ h2{margin:0 0 12px 0;font-size:18px}
 }
 
 .actions{flex-wrap:wrap}
+
+.summary{border:1px solid var(--border);border-radius:12px;padding:10px;background:#0c121b}
+.summary .line{display:flex;justify-content:space-between;gap:10px}
+.hunt{border:1px solid var(--border);border-radius:12px;padding:10px;background:#0c121b}
+.hunt h3{margin:0 0 10px 0;font-size:14px}
+.huntItem{border:1px solid var(--border);border-radius:12px;padding:10px;background:#0a1018;margin-bottom:8px}
+.huntItemTop{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.huntSources{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+.sourceRow{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.sourceLeft{display:flex;align-items:center;gap:10px;min-width:0}
+.sourceName{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.small{font-size:12px;color:var(--muted)}

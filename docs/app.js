@@ -7,6 +7,8 @@
 const state = {
   recipes: null,
   itemsById: null,
+  monsters: null,
+  dropsByItemId: null,
   cart: new Map(), // outputItemId -> qty
 };
 
@@ -15,6 +17,8 @@ const els = {
   results: document.getElementById('results'),
   cart: document.getElementById('cart'),
   materials: document.getElementById('materials'),
+  craftSummary: document.getElementById('craftSummary'),
+  huntList: document.getElementById('huntList'),
   btnCopy: document.getElementById('btnCopy'),
   btnShare: document.getElementById('btnShare'),
   btnExport: document.getElementById('btnExport'),
@@ -69,10 +73,65 @@ function setItemIcon(imgEl, itemId){
   };
 }
 
+function localMobIcon(monsterId){ return `./assets/mobs/${monsterId}.png`; }
+function remoteMobIcon(monsterId){
+  return [
+    `https://roidle.com/assets/images/mobs/${monsterId}.png`,
+    `https://roidle.com/seasonal/assets/images/mobs/${monsterId}.png`,
+    `https://roidle.com/assets/images/monsters/${monsterId}.png`,
+    `https://roidle.com/seasonal/assets/images/monsters/${monsterId}.png`,
+  ];
+}
+function setMobIcon(imgEl, monsterId){
+  const fallbacks = remoteMobIcon(monsterId);
+  let i = -1;
+  imgEl.src = localMobIcon(monsterId);
+  imgEl.onerror = () => {
+    i += 1;
+    if (i < fallbacks.length){
+      imgEl.src = fallbacks[i];
+    } else {
+      imgEl.style.visibility = 'hidden';
+    }
+  };
+}
+
+
 function itemName(itemId){
   const fromCatalog = state.itemsById?.[String(itemId)]?.name;
   return fromCatalog || `Item #${itemId}`;
 }
+
+function itemTooltip(itemId){
+  const it = state.itemsById?.[String(itemId)];
+  if (!it) return itemName(itemId);
+  const bits = [];
+  if (it.tier != null) bits.push(`Tier ${it.tier}`);
+  if (it.type) bits.push(it.type);
+  if (it.subType && it.subType !== it.type) bits.push(it.subType);
+  const head = `${it.name}${bits.length ? ' • ' + bits.join(' • ') : ''}`;
+  const desc = it.description ? `\n${it.description}` : '';
+  return head + desc;
+}
+function recipeTooltip(rec){
+  const base = recipeName(rec);
+  const bits = [];
+  if (rec?.craft) bits.push(rec.craft);
+  if (rec?.category) bits.push(rec.category);
+  if (rec?.timeSeconds != null) bits.push(`Time: ${fmtTime(rec.timeSeconds)}`);
+  if (rec?.chancePercent != null) bits.push(`Chance: ${rec.chancePercent}%`);
+  return base + (bits.length ? `\n${bits.join(' • ')}` : '') + (state.itemsById?.[String(rec.outputItemId)]?.description ? `\n${state.itemsById[String(rec.outputItemId)].description}` : '');
+}
+function fmtTime(totalSeconds){
+  const s = Math.max(0, Math.floor(totalSeconds || 0));
+  const h = Math.floor(s/3600);
+  const m = Math.floor((s%3600)/60);
+  const sec = s%60;
+  if (h>0) return `${h}h ${m}m ${sec}s`;
+  if (m>0) return `${m}m ${sec}s`;
+  return `${sec}s`;
+}
+
 function recipeName(rec){
   return rec?.name || itemName(rec?.outputItemId);
 }
@@ -143,6 +202,8 @@ async function init(){
   state.recipes = await loadJson('./data/craft_recipes.json');
 
   // itemsCatalog.json: array OR {data:[...]}
+  // monsters.json: generated from getMonsterListComplete
+
   try{
     const items = await loadJson('./data/itemsCatalog.json');
     const arr = Array.isArray(items) ? items : (Array.isArray(items?.data) ? items.data : null);
@@ -151,6 +212,34 @@ async function init(){
     }
   } catch(e){
     // optional but recommended
+  }
+
+  // Monsters (for drop sources). Optional but recommended.
+  try{
+    const mon = await loadJson('./data/monsters.json');
+    const arr = Array.isArray(mon) ? mon : (Array.isArray(mon?.monsters) ? mon.monsters : null);
+    if (arr){
+      state.monsters = arr;
+      // Build drop index: itemId -> [{monsterId,name,level,tier,gatheringNode,chance}]
+      const map = {};
+      for (const m of arr){
+        for (const d of (m.drops || [])){
+          if (d?.itemId == null) continue;
+          const k = String(d.itemId);
+          (map[k] ||= []).push({
+            monsterId: m.id,
+            name: m.name,
+            level: m.level,
+            tier: m.tier,
+            gatheringNode: !!m.gatheringNode,
+            chance: d.chance
+          });
+        }
+      }
+      state.dropsByItemId = map;
+    }
+  } catch(e){
+    // ok
   }
 
   buildFilterOptions();
@@ -290,6 +379,7 @@ function renderResults(){
     const name = document.createElement('div');
     name.className = 'name';
     name.textContent = recipeName(rec);
+    name.title = recipeTooltip(rec);
 
     const k = craftKey(rec);
     const pill = document.createElement('div');
@@ -350,6 +440,7 @@ function renderCart(){
     const title = document.createElement('div');
     title.className = 'title';
     title.textContent = rec ? recipeName(rec) : itemName(outputId);
+    title.title = rec ? recipeTooltip(rec) : itemTooltip(outputId);
 
     const sub = document.createElement('div');
     sub.className = 'muted';
@@ -501,6 +592,7 @@ function renderMaterials(){
     const name = document.createElement('div');
     name.className = 'matName';
     name.textContent = m.name;
+    name.title = itemTooltip(m.itemId);
 
     left.appendChild(img);
     left.appendChild(name);
@@ -519,10 +611,162 @@ function renderMaterials(){
   els.btnExport.disabled = mats.length === 0;
 }
 
+
+function computeCraftPlan(){
+  // Returns { craftCounts: Map<outputItemId, crafts>, totalSeconds }
+  const craftCounts = new Map();
+  const recursive = els.toggleRecursive.checked;
+  const accountForChance = els.toggleChance.checked;
+  const visiting = new Set();
+
+  function addCraft(outputItemId, crafts){
+    const k = String(outputItemId);
+    craftCounts.set(k, (craftCounts.get(k) || 0) + crafts);
+  }
+
+  function expand(outputItemId, desiredQty){
+    const rec = state.recipes.recipesByOutputItemId?.[String(outputItemId)];
+    if (!rec) return;
+
+    const crafts = craftsNeeded(desiredQty, rec.outputAmount, rec.chancePercent, accountForChance);
+    addCraft(outputItemId, crafts);
+
+    if (!recursive) return;
+
+    for (const m of (rec.materials || [])){
+      const need = (m.amount || 0) * crafts;
+      const key = String(m.itemId);
+      if (visiting.has(key)) continue;
+      if (state.recipes.recipesByOutputItemId?.[key]){
+        visiting.add(key);
+        expand(m.itemId, need);
+        visiting.delete(key);
+      }
+    }
+  }
+
+  for (const [outputId, qty] of state.cart.entries()){
+    expand(outputId, qty);
+  }
+
+  let totalSeconds = 0;
+  for (const [outputId, crafts] of craftCounts.entries()){
+    const rec = state.recipes.recipesByOutputItemId?.[String(outputId)];
+    if (rec?.timeSeconds) totalSeconds += rec.timeSeconds * crafts;
+  }
+  return { craftCounts, totalSeconds };
+}
+
+function renderCraftSummary(){
+  const el = els.craftSummary;
+  if (!el) return;
+  if (state.cart.size === 0){
+    el.className = 'summary muted';
+    el.textContent = '';
+    return;
+  }
+  const plan = computeCraftPlan();
+  const lines = [];
+  lines.push({k:'Total craft time', v: fmtTime(plan.totalSeconds)});
+  lines.push({k:'Craft actions', v: fmt([...plan.craftCounts.values()].reduce((a,b)=>a+b,0))});
+  el.className = 'summary';
+  el.innerHTML = `<div class="line"><span class="small">Crafting summary</span><span></span></div>` +
+    lines.map(x => `<div class="line"><span>${x.k}</span><span class="muted">${x.v}</span></div>`).join('');
+}
+
+function bestDropSourcesForItem(itemId, limit=5){
+  const arr = state.dropsByItemId?.[String(itemId)] || [];
+  // Sort by chance desc
+  const sorted = [...arr].sort((a,b)=> (b.chance||0) - (a.chance||0));
+  // de-dupe by monsterId
+  const seen = new Set();
+  const out = [];
+  for (const s of sorted){
+    if (seen.has(s.monsterId)) continue;
+    seen.add(s.monsterId);
+    out.push(s);
+    if (out.length >= limit) break;
+  }
+  return out;
+}
+
+function renderHuntList(){
+  const el = els.huntList;
+  if (!el) return;
+  if (!state.dropsByItemId){
+    el.className = 'hunt muted';
+    el.innerHTML = `<span class="small">Drop sources</span><div class="muted">No monsters dataset found. Add <code>docs/data/monsters.json</code> to enable drop recommendations.</div>`;
+    return;
+  }
+  if (state.cart.size === 0){
+    el.className = 'hunt muted';
+    el.textContent = '';
+    return;
+  }
+
+  const mats = computeMaterials();
+  const withSources = mats
+    .map(m => ({...m, sources: bestDropSourcesForItem(m.itemId, 5)}))
+    .filter(m => m.sources.length > 0)
+    .slice(0, 40); // keep UI light
+
+  el.className = 'hunt';
+  if (withSources.length === 0){
+    el.innerHTML = `<h3>Hunt targets</h3><div class="muted">No drop sources found for these materials (they may be shop-only, craft-only, or missing from the monster dump).</div>`;
+    return;
+  }
+
+  el.innerHTML = `<h3>Hunt targets for materials</h3>` + withSources.map(m => {
+    const srcHtml = m.sources.map(s => {
+      const chancePct = s.chance >= 100 ? (s.chance/100).toFixed(2) + '%' : (s.chance) + ' (raw)';
+      const tag = s.gatheringNode ? 'Node' : 'Mob';
+      return `
+        <div class="sourceRow">
+          <div class="sourceLeft">
+            <img class="thumb" alt="${s.name}" />
+            <div class="sourceName" title="${s.name} (Lv ${s.level}, Tier ${s.tier})">${s.name} <span class="small">• Lv ${s.level} • ${tag}</span></div>
+          </div>
+          <div class="small">${chancePct}</div>
+        </div>
+      `;
+    }).join('');
+
+    return `
+      <div class="huntItem">
+        <div class="huntItemTop">
+          <div class="matLeft">
+            <img class="thumb" alt="${m.name}" />
+            <div class="matName" title="${itemTooltip(m.itemId)}">${m.name}</div>
+          </div>
+          <div class="matAmt">×${fmt(m.amount)}</div>
+        </div>
+        <div class="huntSources">${srcHtml}</div>
+      </div>
+    `;
+  }).join('');
+
+  // After HTML inserted, set icons (local-first + fallbacks)
+  // materials icons:
+  const matThumbs = el.querySelectorAll('.huntItemTop .thumb');
+  withSources.forEach((m, i) => setItemIcon(matThumbs[i], m.itemId));
+
+  // mob icons:
+  const mobImgs = el.querySelectorAll('.sourceRow .thumb');
+  let idx = 0;
+  for (const m of withSources){
+    for (const s of m.sources){
+      setMobIcon(mobImgs[idx], s.monsterId);
+      idx += 1;
+    }
+  }
+}
+
 function render(){
   renderResults();
   renderCart();
   renderMaterials();
+  renderCraftSummary();
+  renderHuntList();
 }
 
 init().catch(err => {

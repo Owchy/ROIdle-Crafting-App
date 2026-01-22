@@ -1,0 +1,3745 @@
+{
+  "monsters": [
+    {
+      "id": 2000,
+      "name": "Baby Fox",
+      "level": 1,
+      "tier": 1,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16020,
+          "chance": 600
+        },
+        {
+          "itemId": 1,
+          "chance": 5000
+        }
+      ]
+    },
+    {
+      "id": 2001,
+      "name": "Baby Tiger",
+      "level": 3,
+      "tier": 1,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16020,
+          "chance": 700
+        },
+        {
+          "itemId": 1,
+          "chance": 5000
+        }
+      ]
+    },
+    {
+      "id": 2002,
+      "name": "Sea Urchin",
+      "level": 5,
+      "tier": 1,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16307,
+          "chance": 600
+        },
+        {
+          "itemId": 17000,
+          "chance": 700
+        },
+        {
+          "itemId": 2,
+          "chance": 5000
+        }
+      ]
+    },
+    {
+      "id": 2003,
+      "name": "Beach Crawler",
+      "level": 6,
+      "tier": 1,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16020,
+          "chance": 800
+        },
+        {
+          "itemId": 2,
+          "chance": 6000
+        }
+      ]
+    },
+    {
+      "id": 2004,
+      "name": "Sea Lurker",
+      "level": 8,
+      "tier": 1,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16020,
+          "chance": 900
+        },
+        {
+          "itemId": 17000,
+          "chance": 1000
+        },
+        {
+          "itemId": 16307,
+          "chance": 700
+        },
+        {
+          "itemId": 1,
+          "chance": 8000
+        }
+      ]
+    },
+    {
+      "id": 2005,
+      "name": "Plainstrider",
+      "level": 10,
+      "tier": 2,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16040,
+          "chance": 950
+        },
+        {
+          "itemId": 16020,
+          "chance": 1000
+        },
+        {
+          "itemId": 3,
+          "chance": 7000
+        }
+      ]
+    },
+    {
+      "id": 2006,
+      "name": "Spiderling",
+      "level": 11,
+      "tier": 2,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16300,
+          "chance": 800
+        },
+        {
+          "itemId": 16303,
+          "chance": 800
+        },
+        {
+          "itemId": 4,
+          "chance": 5000
+        }
+      ]
+    },
+    {
+      "id": 2007,
+      "name": "Sunscale Chromis",
+      "level": 12,
+      "tier": 2,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16021,
+          "chance": 700
+        },
+        {
+          "itemId": 17001,
+          "chance": 800
+        },
+        {
+          "itemId": 5,
+          "chance": 6500
+        }
+      ]
+    },
+    {
+      "id": 2008,
+      "name": "Sea Horse",
+      "level": 13,
+      "tier": 2,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16307,
+          "chance": 800
+        },
+        {
+          "itemId": 5,
+          "chance": 6000
+        }
+      ]
+    },
+    {
+      "id": 2009,
+      "name": "Crimson Snapper",
+      "level": 14,
+      "tier": 2,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16021,
+          "chance": 800
+        },
+        {
+          "itemId": 17001,
+          "chance": 1000
+        },
+        {
+          "itemId": 5,
+          "chance": 7000
+        }
+      ]
+    },
+    {
+      "id": 2010,
+      "name": "Gnoll Soldier",
+      "level": 16,
+      "tier": 2,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 17002,
+          "chance": 500
+        },
+        {
+          "itemId": 6,
+          "chance": 6000
+        },
+        {
+          "itemId": 16301,
+          "chance": 300
+        }
+      ]
+    },
+    {
+      "id": 2011,
+      "name": "Gnoll Spearfighter",
+      "level": 17,
+      "tier": 2,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 17002,
+          "chance": 500
+        },
+        {
+          "itemId": 6,
+          "chance": 6000
+        },
+        {
+          "itemId": 16021,
+          "chance": 800
+        }
+      ]
+    },
+    {
+      "id": 2012,
+      "name": "Gnoll Bowman",
+      "level": 19,
+      "tier": 2,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 17002,
+          "chance": 500
+        },
+        {
+          "itemId": 6,
+          "chance": 6000
+        },
+        {
+          "itemId": 16308,
+          "chance": 300
+        }
+      ]
+    },
+    {
+      "id": 2013,
+      "name": "Lesser Spheria",
+      "level": 20,
+      "tier": 3,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16304,
+          "chance": 800
+        },
+        {
+          "itemId": 16021,
+          "chance": 900
+        }
+      ]
+    },
+    {
+      "id": 2014,
+      "name": "Sea Turtle",
+      "level": 21,
+      "tier": 3,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16022,
+          "chance": 500
+        },
+        {
+          "itemId": 16140,
+          "chance": 500
+        },
+        {
+          "itemId": 5,
+          "chance": 9000
+        },
+        {
+          "itemId": 16307,
+          "chance": 1000
+        }
+      ]
+    },
+    {
+      "id": 2015,
+      "name": "Baby Octi",
+      "level": 22,
+      "tier": 3,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16308,
+          "chance": 500
+        },
+        {
+          "itemId": 16305,
+          "chance": 500
+        },
+        {
+          "itemId": 16120,
+          "chance": 500
+        },
+        {
+          "itemId": 6,
+          "chance": 9000
+        }
+      ]
+    },
+    {
+      "id": 2016,
+      "name": "Juvenile Shark",
+      "level": 23,
+      "tier": 3,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16060,
+          "chance": 300
+        },
+        {
+          "itemId": 16022,
+          "chance": 600
+        },
+        {
+          "itemId": 7,
+          "chance": 8500
+        }
+      ]
+    },
+    {
+      "id": 2017,
+      "name": "Feral Rat",
+      "level": 24,
+      "tier": 3,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16100,
+          "chance": 250
+        },
+        {
+          "itemId": 16022,
+          "chance": 700
+        },
+        {
+          "itemId": 17003,
+          "chance": 500
+        },
+        {
+          "itemId": 16080,
+          "chance": 300
+        }
+      ]
+    },
+    {
+      "id": 2018,
+      "name": "Slime",
+      "level": 25,
+      "tier": 3,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16306,
+          "chance": 200
+        },
+        {
+          "itemId": 17004,
+          "chance": 500
+        },
+        {
+          "itemId": 8,
+          "chance": 5000
+        }
+      ]
+    },
+    {
+      "id": 2019,
+      "name": "Slime Warrior",
+      "level": 26,
+      "tier": 3,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16306,
+          "chance": 200
+        },
+        {
+          "itemId": 17004,
+          "chance": 500
+        },
+        {
+          "itemId": 16301,
+          "chance": 500
+        },
+        {
+          "itemId": 8,
+          "chance": 6000
+        }
+      ]
+    },
+    {
+      "id": 2020,
+      "name": "Slime Mage",
+      "level": 27,
+      "tier": 3,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16306,
+          "chance": 250
+        },
+        {
+          "itemId": 16308,
+          "chance": 600
+        },
+        {
+          "itemId": 8,
+          "chance": 6000
+        }
+      ]
+    },
+    {
+      "id": 2021,
+      "name": "Slime Healer",
+      "level": 28,
+      "tier": 3,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16306,
+          "chance": 250
+        },
+        {
+          "itemId": 8,
+          "chance": 7000
+        }
+      ]
+    },
+    {
+      "id": 2022,
+      "name": "Slime Conjurer",
+      "level": 29,
+      "tier": 3,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16306,
+          "chance": 300
+        },
+        {
+          "itemId": 16308,
+          "chance": 600
+        },
+        {
+          "itemId": 8,
+          "chance": 7000
+        }
+      ]
+    },
+    {
+      "id": 2023,
+      "name": "Slime Hero",
+      "level": 29,
+      "tier": 3,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16306,
+          "chance": 300
+        },
+        {
+          "itemId": 17004,
+          "chance": 500
+        },
+        {
+          "itemId": 16301,
+          "chance": 700
+        },
+        {
+          "itemId": 8,
+          "chance": 7000
+        }
+      ]
+    },
+    {
+      "id": 2024,
+      "name": "Slime Archer",
+      "level": 29,
+      "tier": 3,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16308,
+          "chance": 700
+        },
+        {
+          "itemId": 8,
+          "chance": 7000
+        }
+      ]
+    },
+    {
+      "id": 2026,
+      "name": "Rocky Rabbit",
+      "level": 31,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16101,
+          "chance": 500
+        },
+        {
+          "itemId": 16023,
+          "chance": 400
+        },
+        {
+          "itemId": 9,
+          "chance": 5000
+        }
+      ]
+    },
+    {
+      "id": 2027,
+      "name": "Mountain Bat",
+      "level": 32,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16061,
+          "chance": 500
+        },
+        {
+          "itemId": 9,
+          "chance": 5000
+        },
+        {
+          "itemId": 16301,
+          "chance": 800
+        }
+      ]
+    },
+    {
+      "id": 2028,
+      "name": "Mountain Wolf",
+      "level": 34,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16023,
+          "chance": 500
+        },
+        {
+          "itemId": 16081,
+          "chance": 400
+        },
+        {
+          "itemId": 9,
+          "chance": 5000
+        }
+      ]
+    },
+    {
+      "id": 2029,
+      "name": "Harpy",
+      "level": 35,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16081,
+          "chance": 500
+        },
+        {
+          "itemId": 16041,
+          "chance": 600
+        },
+        {
+          "itemId": 16100,
+          "chance": 700
+        }
+      ]
+    },
+    {
+      "id": 2030,
+      "name": "Earth Wisp",
+      "level": 37,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16309,
+          "chance": 500
+        },
+        {
+          "itemId": 9,
+          "chance": 7000
+        },
+        {
+          "itemId": 16301,
+          "chance": 800
+        }
+      ]
+    },
+    {
+      "id": 2031,
+      "name": "Mountain Snail",
+      "level": 38,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 9,
+          "chance": 7000
+        },
+        {
+          "itemId": 16141,
+          "chance": 500
+        }
+      ]
+    },
+    {
+      "id": 2032,
+      "name": "Goat",
+      "level": 39,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16121,
+          "chance": 250
+        },
+        {
+          "itemId": 16023,
+          "chance": 400
+        },
+        {
+          "itemId": 9,
+          "chance": 7000
+        }
+      ]
+    },
+    {
+      "id": 2033,
+      "name": "Warthog",
+      "level": 40,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16102,
+          "chance": 350
+        },
+        {
+          "itemId": 16024,
+          "chance": 400
+        },
+        {
+          "itemId": 16062,
+          "chance": 350
+        }
+      ]
+    },
+    {
+      "id": 2034,
+      "name": "Mountain Scorpion",
+      "level": 42,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16082,
+          "chance": 400
+        },
+        {
+          "itemId": 16142,
+          "chance": 400
+        },
+        {
+          "itemId": 15,
+          "chance": 4000
+        }
+      ]
+    },
+    {
+      "id": 2035,
+      "name": "Greathorn",
+      "level": 43,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16121,
+          "chance": 400
+        },
+        {
+          "itemId": 16024,
+          "chance": 500
+        },
+        {
+          "itemId": 16102,
+          "chance": 400
+        }
+      ]
+    },
+    {
+      "id": 2036,
+      "name": "Black Wolf",
+      "level": 44,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16082,
+          "chance": 350
+        },
+        {
+          "itemId": 16024,
+          "chance": 500
+        },
+        {
+          "itemId": 16062,
+          "chance": 400
+        }
+      ]
+    },
+    {
+      "id": 2037,
+      "name": "Cliff Owl",
+      "level": 45,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16042,
+          "chance": 300
+        },
+        {
+          "itemId": 15,
+          "chance": 4000
+        }
+      ]
+    },
+    {
+      "id": 2081,
+      "name": "Rocky Dodo",
+      "level": 46,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16102,
+          "chance": 400
+        },
+        {
+          "itemId": 16042,
+          "chance": 400
+        },
+        {
+          "itemId": 16024,
+          "chance": 600
+        }
+      ]
+    },
+    {
+      "id": 2082,
+      "name": "Glacial Snake",
+      "level": 47,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16062,
+          "chance": 300
+        },
+        {
+          "itemId": 15,
+          "chance": 6000
+        }
+      ]
+    },
+    {
+      "id": 2083,
+      "name": "Razortail",
+      "level": 48,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16042,
+          "chance": 500
+        },
+        {
+          "itemId": 16082,
+          "chance": 500
+        },
+        {
+          "itemId": 15,
+          "chance": 6000
+        }
+      ]
+    },
+    {
+      "id": 2084,
+      "name": "Mad Ram",
+      "level": 49,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16121,
+          "chance": 500
+        },
+        {
+          "itemId": 16024,
+          "chance": 600
+        },
+        {
+          "itemId": 16301,
+          "chance": 1000
+        }
+      ]
+    },
+    {
+      "id": 2038,
+      "name": "Dire Frostwolf",
+      "level": 51,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16083,
+          "chance": 350
+        },
+        {
+          "itemId": 16025,
+          "chance": 500
+        },
+        {
+          "itemId": 16063,
+          "chance": 350
+        }
+      ]
+    },
+    {
+      "id": 2039,
+      "name": "Grizzly Bear",
+      "level": 52,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16083,
+          "chance": 350
+        },
+        {
+          "itemId": 16025,
+          "chance": 500
+        },
+        {
+          "itemId": 16103,
+          "chance": 350
+        }
+      ]
+    },
+    {
+      "id": 2040,
+      "name": "Stone Spider",
+      "level": 54,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16311,
+          "chance": 350
+        },
+        {
+          "itemId": 17006,
+          "chance": 300
+        },
+        {
+          "itemId": 15032,
+          "chance": 300
+        },
+        {
+          "itemId": 19,
+          "chance": 3000
+        }
+      ]
+    },
+    {
+      "id": 2041,
+      "name": "Boulder Bull",
+      "level": 56,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16025,
+          "chance": 600
+        },
+        {
+          "itemId": 16121,
+          "chance": 600
+        },
+        {
+          "itemId": 17006,
+          "chance": 300
+        }
+      ]
+    },
+    {
+      "id": 2042,
+      "name": "Rock Turtle",
+      "level": 57,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16143,
+          "chance": 400
+        },
+        {
+          "itemId": 17006,
+          "chance": 300
+        },
+        {
+          "itemId": 19,
+          "chance": 5000
+        }
+      ]
+    },
+    {
+      "id": 2043,
+      "name": "Earth Spawn",
+      "level": 58,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16143,
+          "chance": 400
+        },
+        {
+          "itemId": 17006,
+          "chance": 400
+        },
+        {
+          "itemId": 19,
+          "chance": 5000
+        }
+      ]
+    },
+    {
+      "id": 2044,
+      "name": "Summit Gryphon",
+      "level": 59,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16043,
+          "chance": 800
+        },
+        {
+          "itemId": 16025,
+          "chance": 600
+        },
+        {
+          "itemId": 16301,
+          "chance": 1200
+        }
+      ]
+    },
+    {
+      "id": 2046,
+      "name": "Forest Sprite",
+      "level": 31,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 10,
+          "chance": 5000
+        },
+        {
+          "itemId": 16141,
+          "chance": 500
+        }
+      ]
+    },
+    {
+      "id": 2047,
+      "name": "Grasshopper",
+      "level": 32,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 10,
+          "chance": 5000
+        },
+        {
+          "itemId": 16080,
+          "chance": 700
+        }
+      ]
+    },
+    {
+      "id": 2048,
+      "name": "Baby Fawn",
+      "level": 34,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16101,
+          "chance": 500
+        },
+        {
+          "itemId": 16023,
+          "chance": 400
+        },
+        {
+          "itemId": 16081,
+          "chance": 400
+        }
+      ]
+    },
+    {
+      "id": 2049,
+      "name": "Tree Spider",
+      "level": 35,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16061,
+          "chance": 500
+        },
+        {
+          "itemId": 16309,
+          "chance": 800
+        },
+        {
+          "itemId": 10,
+          "chance": 5000
+        }
+      ]
+    },
+    {
+      "id": 2050,
+      "name": "Catermoth",
+      "level": 37,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 10,
+          "chance": 7000
+        },
+        {
+          "itemId": 16309,
+          "chance": 800
+        },
+        {
+          "itemId": 16041,
+          "chance": 600
+        }
+      ]
+    },
+    {
+      "id": 2051,
+      "name": "Deer",
+      "level": 38,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16101,
+          "chance": 500
+        },
+        {
+          "itemId": 16023,
+          "chance": 600
+        },
+        {
+          "itemId": 16120,
+          "chance": 700
+        },
+        {
+          "itemId": 16121,
+          "chance": 250
+        }
+      ]
+    },
+    {
+      "id": 2052,
+      "name": "Treant",
+      "level": 39,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 10,
+          "chance": 7000
+        },
+        {
+          "itemId": 16141,
+          "chance": 600
+        }
+      ]
+    },
+    {
+      "id": 2053,
+      "name": "King Parrot",
+      "level": 40,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16042,
+          "chance": 600
+        },
+        {
+          "itemId": 16024,
+          "chance": 400
+        },
+        {
+          "itemId": 16082,
+          "chance": 250
+        },
+        {
+          "itemId": 10,
+          "chance": 7000
+        }
+      ]
+    },
+    {
+      "id": 2054,
+      "name": "Fangrot",
+      "level": 41,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16062,
+          "chance": 400
+        },
+        {
+          "itemId": 16310,
+          "chance": 400
+        },
+        {
+          "itemId": 16,
+          "chance": 4000
+        }
+      ]
+    },
+    {
+      "id": 2055,
+      "name": "Forest Fox",
+      "level": 43,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16082,
+          "chance": 350
+        },
+        {
+          "itemId": 16024,
+          "chance": 400
+        },
+        {
+          "itemId": 16062,
+          "chance": 350
+        }
+      ]
+    },
+    {
+      "id": 2056,
+      "name": "Forest Spora",
+      "level": 44,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16162,
+          "chance": 600
+        },
+        {
+          "itemId": 15027,
+          "chance": 500
+        },
+        {
+          "itemId": 16,
+          "chance": 4000
+        }
+      ]
+    },
+    {
+      "id": 2057,
+      "name": "Onyx Griffin",
+      "level": 45,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16042,
+          "chance": 800
+        },
+        {
+          "itemId": 16024,
+          "chance": 500
+        },
+        {
+          "itemId": 16102,
+          "chance": 350
+        }
+      ]
+    },
+    {
+      "id": 2085,
+      "name": "Scarlet Spider",
+      "level": 46,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16310,
+          "chance": 800
+        },
+        {
+          "itemId": 16142,
+          "chance": 450
+        },
+        {
+          "itemId": 16,
+          "chance": 6000
+        }
+      ]
+    },
+    {
+      "id": 2086,
+      "name": "Hell Mantis",
+      "level": 47,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16082,
+          "chance": 400
+        },
+        {
+          "itemId": 16,
+          "chance": 6000
+        }
+      ]
+    },
+    {
+      "id": 2087,
+      "name": "Goblin Pillager",
+      "level": 48,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16062,
+          "chance": 400
+        },
+        {
+          "itemId": 16301,
+          "chance": 350
+        },
+        {
+          "itemId": 16024,
+          "chance": 600
+        }
+      ]
+    },
+    {
+      "id": 2088,
+      "name": "Goblin Cryomancer",
+      "level": 49,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16102,
+          "chance": 400
+        },
+        {
+          "itemId": 16024,
+          "chance": 300
+        }
+      ]
+    },
+    {
+      "id": 2058,
+      "name": "Goblin Vanguard",
+      "level": 51,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16301,
+          "chance": 450
+        },
+        {
+          "itemId": 16025,
+          "chance": 500
+        },
+        {
+          "itemId": 16103,
+          "chance": 350
+        }
+      ]
+    },
+    {
+      "id": 2059,
+      "name": "Goblin Tamer",
+      "level": 52,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16301,
+          "chance": 600
+        },
+        {
+          "itemId": 16025,
+          "chance": 500
+        }
+      ]
+    },
+    {
+      "id": 2060,
+      "name": "Goblin Aeromancer",
+      "level": 54,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16025,
+          "chance": 500
+        },
+        {
+          "itemId": 17007,
+          "chance": 300
+        },
+        {
+          "itemId": 16043,
+          "chance": 600
+        }
+      ]
+    },
+    {
+      "id": 2061,
+      "name": "Goblin Sharpshooter",
+      "level": 55,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 17007,
+          "chance": 300
+        },
+        {
+          "itemId": 20,
+          "chance": 3000
+        }
+      ]
+    },
+    {
+      "id": 2062,
+      "name": "Goblin Arachnorider",
+      "level": 56,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16311,
+          "chance": 400
+        },
+        {
+          "itemId": 16301,
+          "chance": 750
+        },
+        {
+          "itemId": 17007,
+          "chance": 400
+        }
+      ]
+    },
+    {
+      "id": 2063,
+      "name": "Goblin Reaper",
+      "level": 57,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16083,
+          "chance": 400
+        },
+        {
+          "itemId": 16103,
+          "chance": 400
+        },
+        {
+          "itemId": 16025,
+          "chance": 600
+        }
+      ]
+    },
+    {
+      "id": 2064,
+      "name": "Goblin Barbarian",
+      "level": 58,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16063,
+          "chance": 400
+        },
+        {
+          "itemId": 16025,
+          "chance": 600
+        },
+        {
+          "itemId": 16103,
+          "chance": 400
+        },
+        {
+          "itemId": 20,
+          "chance": 5000
+        }
+      ]
+    },
+    {
+      "id": 2065,
+      "name": "Goblin Pyromancer",
+      "level": 59,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16311,
+          "chance": 400
+        },
+        {
+          "itemId": 16063,
+          "chance": 400
+        },
+        {
+          "itemId": 17007,
+          "chance": 400
+        },
+        {
+          "itemId": 20,
+          "chance": 5000
+        }
+      ]
+    },
+    {
+      "id": 2066,
+      "name": "Sand Slime",
+      "level": 31,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 11,
+          "chance": 5000
+        },
+        {
+          "itemId": 16306,
+          "chance": 700
+        }
+      ]
+    },
+    {
+      "id": 2067,
+      "name": "Feral Cactus",
+      "level": 32,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 11,
+          "chance": 5000
+        },
+        {
+          "itemId": 15027,
+          "chance": 150
+        }
+      ]
+    },
+    {
+      "id": 2068,
+      "name": "Desert Horned Rabbit",
+      "level": 34,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16101,
+          "chance": 500
+        },
+        {
+          "itemId": 16023,
+          "chance": 400
+        },
+        {
+          "itemId": 16120,
+          "chance": 700
+        }
+      ]
+    },
+    {
+      "id": 2069,
+      "name": "Sidewinder",
+      "level": 35,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16061,
+          "chance": 500
+        },
+        {
+          "itemId": 16023,
+          "chance": 500
+        },
+        {
+          "itemId": 11,
+          "chance": 5000
+        },
+        {
+          "itemId": 16081,
+          "chance": 500
+        }
+      ]
+    },
+    {
+      "id": 2070,
+      "name": "Cursed Cactus",
+      "level": 38,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 11,
+          "chance": 7000
+        },
+        {
+          "itemId": 16301,
+          "chance": 550
+        }
+      ]
+    },
+    {
+      "id": 2071,
+      "name": "Scorching Lizard",
+      "level": 39,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16061,
+          "chance": 550
+        },
+        {
+          "itemId": 16024,
+          "chance": 350
+        },
+        {
+          "itemId": 16060,
+          "chance": 700
+        },
+        {
+          "itemId": 11,
+          "chance": 7000
+        }
+      ]
+    },
+    {
+      "id": 2072,
+      "name": "Sand Scorpid",
+      "level": 40,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16142,
+          "chance": 250
+        },
+        {
+          "itemId": 16024,
+          "chance": 400
+        },
+        {
+          "itemId": 11,
+          "chance": 7000
+        }
+      ]
+    },
+    {
+      "id": 2073,
+      "name": "Giant Cactus",
+      "level": 41,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 15027,
+          "chance": 400
+        },
+        {
+          "itemId": 17,
+          "chance": 4000
+        }
+      ]
+    },
+    {
+      "id": 2074,
+      "name": "Parasand",
+      "level": 42,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16310,
+          "chance": 700
+        },
+        {
+          "itemId": 16307,
+          "chance": 800
+        },
+        {
+          "itemId": 17,
+          "chance": 4000
+        }
+      ]
+    },
+    {
+      "id": 2075,
+      "name": "Colossal Cobra",
+      "level": 44,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16102,
+          "chance": 500
+        },
+        {
+          "itemId": 16024,
+          "chance": 500
+        },
+        {
+          "itemId": 16062,
+          "chance": 450
+        }
+      ]
+    },
+    {
+      "id": 2076,
+      "name": "Colossal Scorpion",
+      "level": 45,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16142,
+          "chance": 400
+        },
+        {
+          "itemId": 16082,
+          "chance": 450
+        }
+      ]
+    },
+    {
+      "id": 2077,
+      "name": "Colossal Wasp",
+      "level": 46,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16082,
+          "chance": 450
+        },
+        {
+          "itemId": 17,
+          "chance": 6000
+        }
+      ]
+    },
+    {
+      "id": 2078,
+      "name": "Colossal Antlion",
+      "level": 47,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16142,
+          "chance": 450
+        },
+        {
+          "itemId": 16062,
+          "chance": 450
+        }
+      ]
+    },
+    {
+      "id": 2079,
+      "name": "Crocolisk",
+      "level": 48,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16024,
+          "chance": 600
+        },
+        {
+          "itemId": 16301,
+          "chance": 700
+        }
+      ]
+    },
+    {
+      "id": 2080,
+      "name": "Sand Tentacles",
+      "level": 49,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16024,
+          "chance": 600
+        },
+        {
+          "itemId": 17,
+          "chance": 6000
+        }
+      ]
+    },
+    {
+      "id": 2093,
+      "name": "Desert Colossus",
+      "level": 51,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16143,
+          "chance": 350
+        },
+        {
+          "itemId": 16301,
+          "chance": 850
+        }
+      ]
+    },
+    {
+      "id": 2094,
+      "name": "Ancient Cactus",
+      "level": 52,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16311,
+          "chance": 350
+        },
+        {
+          "itemId": 15032,
+          "chance": 400
+        }
+      ]
+    },
+    {
+      "id": 2095,
+      "name": "Sandworm",
+      "level": 54,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16121,
+          "chance": 600
+        },
+        {
+          "itemId": 16083,
+          "chance": 350
+        },
+        {
+          "itemId": 16025,
+          "chance": 500
+        }
+      ]
+    },
+    {
+      "id": 2096,
+      "name": "Mummy",
+      "level": 55,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16103,
+          "chance": 400
+        },
+        {
+          "itemId": 17008,
+          "chance": 300
+        },
+        {
+          "itemId": 21,
+          "chance": 3000
+        }
+      ]
+    },
+    {
+      "id": 2097,
+      "name": "Ghost Sphynx",
+      "level": 56,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16143,
+          "chance": 400
+        },
+        {
+          "itemId": 17008,
+          "chance": 300
+        },
+        {
+          "itemId": 16043,
+          "chance": 500
+        }
+      ]
+    },
+    {
+      "id": 2098,
+      "name": "Eldritch Fire Slime",
+      "level": 57,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16311,
+          "chance": 400
+        },
+        {
+          "itemId": 17008,
+          "chance": 400
+        },
+        {
+          "itemId": 16306,
+          "chance": 800
+        }
+      ]
+    },
+    {
+      "id": 2099,
+      "name": "Arcana Skeleton",
+      "level": 58,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16103,
+          "chance": 400
+        },
+        {
+          "itemId": 17008,
+          "chance": 300
+        },
+        {
+          "itemId": 16301,
+          "chance": 1100
+        },
+        {
+          "itemId": 21,
+          "chance": 5000
+        }
+      ]
+    },
+    {
+      "id": 2100,
+      "name": "Ancient Mummy",
+      "level": 59,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16103,
+          "chance": 400
+        },
+        {
+          "itemId": 17008,
+          "chance": 500
+        },
+        {
+          "itemId": 21,
+          "chance": 5000
+        }
+      ]
+    },
+    {
+      "id": 2108,
+      "name": "Bat",
+      "level": 8,
+      "tier": 1,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16307,
+          "chance": 1300
+        },
+        {
+          "itemId": 16020,
+          "chance": 300
+        }
+      ]
+    },
+    {
+      "id": 2109,
+      "name": "Anglerfish",
+      "level": 8,
+      "tier": 1,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 17001,
+          "chance": 500
+        },
+        {
+          "itemId": 16020,
+          "chance": 500
+        },
+        {
+          "itemId": 1,
+          "chance": 9000
+        }
+      ]
+    },
+    {
+      "id": 2110,
+      "name": "Goo",
+      "level": 9,
+      "tier": 1,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16303,
+          "chance": 500
+        },
+        {
+          "itemId": 16306,
+          "chance": 50
+        },
+        {
+          "itemId": 2,
+          "chance": 9000
+        }
+      ]
+    },
+    {
+      "id": 2111,
+      "name": "Waterfly",
+      "level": 9,
+      "tier": 1,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16307,
+          "chance": 1500
+        },
+        {
+          "itemId": 16020,
+          "chance": 500
+        },
+        {
+          "itemId": 3,
+          "chance": 9000
+        }
+      ]
+    },
+    {
+      "id": 2112,
+      "name": "Old Automaton",
+      "level": 10,
+      "tier": 2,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 18308,
+          "chance": 2000
+        },
+        {
+          "itemId": 19000,
+          "chance": 10000
+        },
+        {
+          "itemId": 14507,
+          "chance": 800
+        }
+      ]
+    },
+    {
+      "id": 2120,
+      "name": "Kobold Warrior",
+      "level": 16,
+      "tier": 2,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16021,
+          "chance": 800
+        },
+        {
+          "itemId": 12,
+          "chance": 8000
+        }
+      ]
+    },
+    {
+      "id": 2121,
+      "name": "Kobold Scout",
+      "level": 16,
+      "tier": 2,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16021,
+          "chance": 800
+        },
+        {
+          "itemId": 12,
+          "chance": 8000
+        }
+      ]
+    },
+    {
+      "id": 2122,
+      "name": "Kobold Apprentice",
+      "level": 16,
+      "tier": 2,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16021,
+          "chance": 800
+        },
+        {
+          "itemId": 12,
+          "chance": 8000
+        }
+      ]
+    },
+    {
+      "id": 2123,
+      "name": "Red Dragon Youngling",
+      "level": 18,
+      "tier": 2,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 5,
+          "chance": 7000
+        }
+      ]
+    },
+    {
+      "id": 2124,
+      "name": "Red Dragon Egg",
+      "level": 19,
+      "tier": 2,
+      "gatheringNode": false,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 2,
+          "chance": 5000
+        },
+        {
+          "itemId": 16140,
+          "chance": 200
+        }
+      ]
+    },
+    {
+      "id": 2125,
+      "name": "Kobold Knight",
+      "level": 20,
+      "tier": 3,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 19001,
+          "chance": 9000
+        },
+        {
+          "itemId": 16021,
+          "chance": 10000
+        },
+        {
+          "itemId": 12,
+          "chance": 10000
+        }
+      ]
+    },
+    {
+      "id": 2126,
+      "name": "Kobold Archer",
+      "level": 20,
+      "tier": 3,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 14511,
+          "chance": 600
+        },
+        {
+          "itemId": 16021,
+          "chance": 10000
+        },
+        {
+          "itemId": 12,
+          "chance": 10000
+        }
+      ]
+    },
+    {
+      "id": 2127,
+      "name": "Kobold Mage",
+      "level": 20,
+      "tier": 3,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 18311,
+          "chance": 2000
+        },
+        {
+          "itemId": 16021,
+          "chance": 10000
+        },
+        {
+          "itemId": 12,
+          "chance": 10000
+        }
+      ]
+    },
+    {
+      "id": 2025,
+      "name": "Slime King",
+      "level": 30,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 18300,
+          "chance": 2000
+        },
+        {
+          "itemId": 19002,
+          "chance": 8000
+        },
+        {
+          "itemId": 14500,
+          "chance": 500
+        }
+      ]
+    },
+    {
+      "id": 2128,
+      "name": "Slime Duke",
+      "level": 30,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16306,
+          "chance": 7000
+        }
+      ]
+    },
+    {
+      "id": 2129,
+      "name": "Slime Baron",
+      "level": 30,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16306,
+          "chance": 2000
+        }
+      ]
+    },
+    {
+      "id": 2101,
+      "name": "Centipede",
+      "level": 35,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16101,
+          "chance": 600
+        },
+        {
+          "itemId": 16023,
+          "chance": 400
+        },
+        {
+          "itemId": 14,
+          "chance": 900
+        }
+      ]
+    },
+    {
+      "id": 2102,
+      "name": "Underground Vermin",
+      "level": 36,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16023,
+          "chance": 500
+        },
+        {
+          "itemId": 16309,
+          "chance": 400
+        }
+      ]
+    },
+    {
+      "id": 2103,
+      "name": "Death Crawler",
+      "level": 37,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16023,
+          "chance": 500
+        },
+        {
+          "itemId": 16309,
+          "chance": 400
+        },
+        {
+          "itemId": 14,
+          "chance": 700
+        }
+      ]
+    },
+    {
+      "id": 2104,
+      "name": "Beetle Soldier",
+      "level": 38,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16141,
+          "chance": 600
+        },
+        {
+          "itemId": 16061,
+          "chance": 600
+        },
+        {
+          "itemId": 13,
+          "chance": 900
+        }
+      ]
+    },
+    {
+      "id": 2105,
+      "name": "Dweller Worm",
+      "level": 39,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16141,
+          "chance": 600
+        },
+        {
+          "itemId": 16309,
+          "chance": 600
+        }
+      ]
+    },
+    {
+      "id": 2106,
+      "name": "Black Ant Assassin",
+      "level": 39,
+      "tier": 4,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16081,
+          "chance": 500
+        },
+        {
+          "itemId": 16023,
+          "chance": 500
+        },
+        {
+          "itemId": 13,
+          "chance": 700
+        }
+      ]
+    },
+    {
+      "id": 2107,
+      "name": "Devourer",
+      "level": 40,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 18306,
+          "chance": 2000
+        },
+        {
+          "itemId": 19003,
+          "chance": 7000
+        },
+        {
+          "itemId": 14504,
+          "chance": 150
+        },
+        {
+          "itemId": 14506,
+          "chance": 150
+        },
+        {
+          "itemId": 14505,
+          "chance": 150
+        },
+        {
+          "itemId": 14501,
+          "chance": 3
+        }
+      ]
+    },
+    {
+      "id": 2130,
+      "name": "Kobold Veteran Knight",
+      "level": 46,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16024,
+          "chance": 600
+        },
+        {
+          "itemId": 18,
+          "chance": 800
+        }
+      ]
+    },
+    {
+      "id": 2131,
+      "name": "Kobold Master Archer",
+      "level": 46,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16024,
+          "chance": 600
+        },
+        {
+          "itemId": 18,
+          "chance": 800
+        }
+      ]
+    },
+    {
+      "id": 2132,
+      "name": "Kobold High Mage",
+      "level": 46,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 16024,
+          "chance": 600
+        },
+        {
+          "itemId": 18,
+          "chance": 800
+        }
+      ]
+    },
+    {
+      "id": 2133,
+      "name": "Black Dragon Youngling",
+      "level": 48,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 15,
+          "chance": 5000
+        }
+      ]
+    },
+    {
+      "id": 2134,
+      "name": "Black Dragon Egg",
+      "level": 49,
+      "tier": 5,
+      "gatheringNode": false,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 2,
+          "chance": 8000
+        },
+        {
+          "itemId": 16143,
+          "chance": 200
+        }
+      ]
+    },
+    {
+      "id": 2135,
+      "name": "Kobold Paladin",
+      "level": 50,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 19004,
+          "chance": 6000
+        },
+        {
+          "itemId": 16024,
+          "chance": 10000
+        },
+        {
+          "itemId": 18,
+          "chance": 10000
+        },
+        {
+          "itemId": 14502,
+          "chance": 3
+        }
+      ]
+    },
+    {
+      "id": 2136,
+      "name": "Kobold Warlock",
+      "level": 50,
+      "tier": 6,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 18312,
+          "chance": 2000
+        },
+        {
+          "itemId": 16024,
+          "chance": 10000
+        },
+        {
+          "itemId": 18,
+          "chance": 10000
+        },
+        {
+          "itemId": 14512,
+          "chance": 300
+        }
+      ]
+    },
+    {
+      "id": 2113,
+      "name": "Specter",
+      "level": 61,
+      "tier": 7,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 17010,
+          "chance": 150
+        },
+        {
+          "itemId": 16044,
+          "chance": 300
+        },
+        {
+          "itemId": 22,
+          "chance": 700
+        }
+      ]
+    },
+    {
+      "id": 2114,
+      "name": "Piranos",
+      "level": 62,
+      "tier": 7,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 17011,
+          "chance": 150
+        },
+        {
+          "itemId": 16104,
+          "chance": 300
+        },
+        {
+          "itemId": 16064,
+          "chance": 300
+        },
+        {
+          "itemId": 16026,
+          "chance": 500
+        }
+      ]
+    },
+    {
+      "id": 2115,
+      "name": "Ghost Puppet",
+      "level": 63,
+      "tier": 7,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 17010,
+          "chance": 150
+        },
+        {
+          "itemId": 16122,
+          "chance": 300
+        },
+        {
+          "itemId": 22,
+          "chance": 700
+        }
+      ]
+    },
+    {
+      "id": 2116,
+      "name": "Dark Starfish",
+      "level": 64,
+      "tier": 7,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 17009,
+          "chance": 150
+        },
+        {
+          "itemId": 16312,
+          "chance": 300
+        },
+        {
+          "itemId": 16026,
+          "chance": 600
+        }
+      ]
+    },
+    {
+      "id": 2117,
+      "name": "Spider Crab",
+      "level": 65,
+      "tier": 7,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 17009,
+          "chance": 150
+        },
+        {
+          "itemId": 17011,
+          "chance": 150
+        },
+        {
+          "itemId": 16084,
+          "chance": 300
+        },
+        {
+          "itemId": 16144,
+          "chance": 300
+        },
+        {
+          "itemId": 16026,
+          "chance": 500
+        }
+      ]
+    },
+    {
+      "id": 2118,
+      "name": "Crabomination",
+      "level": 66,
+      "tier": 7,
+      "gatheringNode": false,
+      "noAttack": false,
+      "drops": [
+        {
+          "itemId": 18309,
+          "chance": 2000
+        },
+        {
+          "itemId": 19005,
+          "chance": 5000
+        },
+        {
+          "itemId": 14503,
+          "chance": 3
+        },
+        {
+          "itemId": 16026,
+          "chance": 10000
+        },
+        {
+          "itemId": 14508,
+          "chance": 80
+        },
+        {
+          "itemId": 14509,
+          "chance": 80
+        },
+        {
+          "itemId": 14510,
+          "chance": 80
+        }
+      ]
+    },
+    {
+      "id": 2119,
+      "name": "Ghostly Wards",
+      "level": 1,
+      "tier": 1,
+      "gatheringNode": false,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 22,
+          "chance": 10000
+        }
+      ]
+    },
+    {
+      "id": 30000,
+      "name": "Mineral Vein I",
+      "level": 1,
+      "tier": 1,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15000,
+          "chance": 10000
+        },
+        {
+          "itemId": 15001,
+          "chance": 1000
+        }
+      ]
+    },
+    {
+      "id": 30010,
+      "name": "Tree I",
+      "level": 1,
+      "tier": 1,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15061,
+          "chance": 10000
+        }
+      ]
+    },
+    {
+      "id": 30020,
+      "name": "Plant I",
+      "level": 1,
+      "tier": 1,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15044,
+          "chance": 10000
+        },
+        {
+          "itemId": 16160,
+          "chance": 6000
+        }
+      ]
+    },
+    {
+      "id": 30030,
+      "name": "Skinnable Body I",
+      "level": 1,
+      "tier": 1,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15023,
+          "chance": 10000
+        }
+      ]
+    },
+    {
+      "id": 30040,
+      "name": "Boulder I",
+      "level": 1,
+      "tier": 1,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15120,
+          "chance": 10000
+        },
+        {
+          "itemId": 101,
+          "chance": 2
+        },
+        {
+          "itemId": 105,
+          "chance": 2
+        },
+        {
+          "itemId": 100,
+          "chance": 4
+        }
+      ]
+    },
+    {
+      "id": 30001,
+      "name": "Mineral Vein II",
+      "level": 11,
+      "tier": 2,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15001,
+          "chance": 10000
+        }
+      ]
+    },
+    {
+      "id": 30011,
+      "name": "Tree II",
+      "level": 11,
+      "tier": 2,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15062,
+          "chance": 10000
+        }
+      ]
+    },
+    {
+      "id": 30021,
+      "name": "Plant II",
+      "level": 11,
+      "tier": 2,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15045,
+          "chance": 10000
+        },
+        {
+          "itemId": 16160,
+          "chance": 8000
+        }
+      ]
+    },
+    {
+      "id": 30031,
+      "name": "Skinnable Body II",
+      "level": 11,
+      "tier": 2,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15025,
+          "chance": 10000
+        },
+        {
+          "itemId": 15024,
+          "chance": 3000
+        }
+      ]
+    },
+    {
+      "id": 30041,
+      "name": "Boulder II",
+      "level": 11,
+      "tier": 2,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15121,
+          "chance": 10000
+        },
+        {
+          "itemId": 102,
+          "chance": 1
+        },
+        {
+          "itemId": 103,
+          "chance": 1
+        },
+        {
+          "itemId": 104,
+          "chance": 1
+        },
+        {
+          "itemId": 100,
+          "chance": 5
+        }
+      ]
+    },
+    {
+      "id": 30002,
+      "name": "Mineral Vein III",
+      "level": 21,
+      "tier": 3,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15003,
+          "chance": 8500
+        }
+      ]
+    },
+    {
+      "id": 30012,
+      "name": "Tree III",
+      "level": 21,
+      "tier": 3,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15063,
+          "chance": 8000
+        }
+      ]
+    },
+    {
+      "id": 30022,
+      "name": "Plant III",
+      "level": 21,
+      "tier": 3,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15046,
+          "chance": 8500
+        },
+        {
+          "itemId": 16161,
+          "chance": 7500
+        }
+      ]
+    },
+    {
+      "id": 30032,
+      "name": "Skinnable Body III",
+      "level": 21,
+      "tier": 3,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15026,
+          "chance": 8500
+        },
+        {
+          "itemId": 15024,
+          "chance": 5000
+        }
+      ]
+    },
+    {
+      "id": 30042,
+      "name": "Boulder III",
+      "level": 21,
+      "tier": 3,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15122,
+          "chance": 9000
+        },
+        {
+          "itemId": 106,
+          "chance": 1
+        },
+        {
+          "itemId": 107,
+          "chance": 1
+        },
+        {
+          "itemId": 108,
+          "chance": 1
+        },
+        {
+          "itemId": 100,
+          "chance": 6
+        }
+      ]
+    },
+    {
+      "id": 30003,
+      "name": "Mineral Vein IV",
+      "level": 31,
+      "tier": 4,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15004,
+          "chance": 8000
+        },
+        {
+          "itemId": 15006,
+          "chance": 8000
+        }
+      ]
+    },
+    {
+      "id": 30013,
+      "name": "Tree IV",
+      "level": 31,
+      "tier": 4,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15064,
+          "chance": 7500
+        },
+        {
+          "itemId": 15065,
+          "chance": 7500
+        }
+      ]
+    },
+    {
+      "id": 30023,
+      "name": "Plant IV",
+      "level": 31,
+      "tier": 4,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15047,
+          "chance": 8000
+        },
+        {
+          "itemId": 15048,
+          "chance": 8000
+        },
+        {
+          "itemId": 16162,
+          "chance": 6000
+        }
+      ]
+    },
+    {
+      "id": 30033,
+      "name": "Skinnable Body IV",
+      "level": 31,
+      "tier": 4,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15028,
+          "chance": 8000
+        },
+        {
+          "itemId": 15029,
+          "chance": 8000
+        },
+        {
+          "itemId": 15027,
+          "chance": 2000
+        }
+      ]
+    },
+    {
+      "id": 30043,
+      "name": "Boulder IV",
+      "level": 31,
+      "tier": 4,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15123,
+          "chance": 8500
+        },
+        {
+          "itemId": 109,
+          "chance": 2
+        },
+        {
+          "itemId": 110,
+          "chance": 2
+        },
+        {
+          "itemId": 100,
+          "chance": 7
+        }
+      ]
+    },
+    {
+      "id": 30004,
+      "name": "Mineral Vein V",
+      "level": 41,
+      "tier": 5,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15007,
+          "chance": 7000
+        },
+        {
+          "itemId": 15009,
+          "chance": 7000
+        }
+      ]
+    },
+    {
+      "id": 30014,
+      "name": "Tree V",
+      "level": 41,
+      "tier": 5,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15066,
+          "chance": 6500
+        },
+        {
+          "itemId": 15067,
+          "chance": 6500
+        }
+      ]
+    },
+    {
+      "id": 30024,
+      "name": "Plant V",
+      "level": 41,
+      "tier": 5,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15049,
+          "chance": 7000
+        },
+        {
+          "itemId": 15050,
+          "chance": 7000
+        },
+        {
+          "itemId": 16163,
+          "chance": 5000
+        },
+        {
+          "itemId": 16164,
+          "chance": 5000
+        }
+      ]
+    },
+    {
+      "id": 30034,
+      "name": "Skinnable Body V",
+      "level": 41,
+      "tier": 5,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15030,
+          "chance": 7000
+        },
+        {
+          "itemId": 15031,
+          "chance": 7000
+        },
+        {
+          "itemId": 15027,
+          "chance": 4000
+        }
+      ]
+    },
+    {
+      "id": 30044,
+      "name": "Boulder V",
+      "level": 41,
+      "tier": 5,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15124,
+          "chance": 8000
+        },
+        {
+          "itemId": 111,
+          "chance": 3
+        },
+        {
+          "itemId": 100,
+          "chance": 8
+        }
+      ]
+    },
+    {
+      "id": 30005,
+      "name": "Mineral Vein VI",
+      "level": 51,
+      "tier": 6,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15010,
+          "chance": 6000
+        },
+        {
+          "itemId": 15011,
+          "chance": 6000
+        }
+      ]
+    },
+    {
+      "id": 30015,
+      "name": "Tree VI",
+      "level": 51,
+      "tier": 6,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15068,
+          "chance": 5500
+        },
+        {
+          "itemId": 15069,
+          "chance": 5500
+        }
+      ]
+    },
+    {
+      "id": 30025,
+      "name": "Plant VI",
+      "level": 51,
+      "tier": 6,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15051,
+          "chance": 6000
+        },
+        {
+          "itemId": 15052,
+          "chance": 6000
+        },
+        {
+          "itemId": 16165,
+          "chance": 4000
+        },
+        {
+          "itemId": 16166,
+          "chance": 4000
+        }
+      ]
+    },
+    {
+      "id": 30035,
+      "name": "Skinnable Body VI",
+      "level": 51,
+      "tier": 6,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15033,
+          "chance": 6000
+        },
+        {
+          "itemId": 15034,
+          "chance": 6000
+        },
+        {
+          "itemId": 15032,
+          "chance": 1500
+        }
+      ]
+    },
+    {
+      "id": 30045,
+      "name": "Boulder VI",
+      "level": 51,
+      "tier": 6,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15125,
+          "chance": 7000
+        },
+        {
+          "itemId": 112,
+          "chance": 3
+        },
+        {
+          "itemId": 100,
+          "chance": 12
+        }
+      ]
+    },
+    {
+      "id": 30006,
+      "name": "Mineral Vein VII",
+      "level": 61,
+      "tier": 7,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15013,
+          "chance": 4000
+        },
+        {
+          "itemId": 15015,
+          "chance": 4000
+        }
+      ]
+    },
+    {
+      "id": 30016,
+      "name": "Tree VII",
+      "level": 61,
+      "tier": 7,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15070,
+          "chance": 2500
+        },
+        {
+          "itemId": 15071,
+          "chance": 2500
+        },
+        {
+          "itemId": 16274,
+          "chance": 250
+        },
+        {
+          "itemId": 16275,
+          "chance": 250
+        }
+      ]
+    },
+    {
+      "id": 30026,
+      "name": "Plant VII",
+      "level": 61,
+      "tier": 7,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15053,
+          "chance": 4000
+        },
+        {
+          "itemId": 15054,
+          "chance": 4000
+        },
+        {
+          "itemId": 16167,
+          "chance": 2000
+        },
+        {
+          "itemId": 16168,
+          "chance": 2000
+        },
+        {
+          "itemId": 16257,
+          "chance": 500
+        },
+        {
+          "itemId": 16258,
+          "chance": 500
+        }
+      ]
+    },
+    {
+      "id": 30036,
+      "name": "Skinnable Body VII",
+      "level": 61,
+      "tier": 7,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15035,
+          "chance": 4000
+        },
+        {
+          "itemId": 15036,
+          "chance": 4000
+        },
+        {
+          "itemId": 15032,
+          "chance": 3000
+        }
+      ]
+    },
+    {
+      "id": 30046,
+      "name": "Boulder VII",
+      "level": 61,
+      "tier": 7,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 15126,
+          "chance": 5500
+        },
+        {
+          "itemId": 100,
+          "chance": 20
+        }
+      ]
+    },
+    {
+      "id": 30100,
+      "name": "New Year Box I",
+      "level": 1,
+      "tier": 1,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 7034,
+          "chance": 1000
+        },
+        {
+          "itemId": 529,
+          "chance": 200
+        },
+        {
+          "itemId": 530,
+          "chance": 100
+        },
+        {
+          "itemId": 20013,
+          "chance": 100
+        },
+        {
+          "itemId": 20019,
+          "chance": 250
+        }
+      ]
+    },
+    {
+      "id": 30101,
+      "name": "New Year Box II",
+      "level": 21,
+      "tier": 3,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 7034,
+          "chance": 2000
+        },
+        {
+          "itemId": 529,
+          "chance": 300
+        },
+        {
+          "itemId": 530,
+          "chance": 200
+        },
+        {
+          "itemId": 20014,
+          "chance": 100
+        },
+        {
+          "itemId": 20019,
+          "chance": 250
+        }
+      ]
+    },
+    {
+      "id": 30102,
+      "name": "New Year Box III",
+      "level": 31,
+      "tier": 4,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 7034,
+          "chance": 3000
+        },
+        {
+          "itemId": 529,
+          "chance": 400
+        },
+        {
+          "itemId": 530,
+          "chance": 300
+        },
+        {
+          "itemId": 20015,
+          "chance": 100
+        },
+        {
+          "itemId": 20019,
+          "chance": 250
+        }
+      ]
+    },
+    {
+      "id": 30103,
+      "name": "New Year Box IV",
+      "level": 41,
+      "tier": 5,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 7034,
+          "chance": 4000
+        },
+        {
+          "itemId": 529,
+          "chance": 500
+        },
+        {
+          "itemId": 530,
+          "chance": 400
+        },
+        {
+          "itemId": 20016,
+          "chance": 100
+        },
+        {
+          "itemId": 20019,
+          "chance": 250
+        }
+      ]
+    },
+    {
+      "id": 30104,
+      "name": "New Year Box V",
+      "level": 51,
+      "tier": 6,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 7034,
+          "chance": 5000
+        },
+        {
+          "itemId": 529,
+          "chance": 600
+        },
+        {
+          "itemId": 530,
+          "chance": 500
+        },
+        {
+          "itemId": 20017,
+          "chance": 100
+        },
+        {
+          "itemId": 20019,
+          "chance": 250
+        }
+      ]
+    },
+    {
+      "id": 30105,
+      "name": "New Year Box VI",
+      "level": 61,
+      "tier": 7,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 7034,
+          "chance": 6000
+        },
+        {
+          "itemId": 529,
+          "chance": 700
+        },
+        {
+          "itemId": 530,
+          "chance": 600
+        },
+        {
+          "itemId": 20018,
+          "chance": 100
+        },
+        {
+          "itemId": 20019,
+          "chance": 250
+        }
+      ]
+    },
+    {
+      "id": 30110,
+      "name": "Halloween Box",
+      "level": 1,
+      "tier": 1,
+      "gatheringNode": true,
+      "noAttack": true,
+      "drops": [
+        {
+          "itemId": 19200,
+          "chance": 5000
+        },
+        {
+          "itemId": 19201,
+          "chance": 5
+        },
+        {
+          "itemId": 12208,
+          "chance": 2
+        },
+        {
+          "itemId": 20011,
+          "chance": 2
+        }
+      ]
+    },
+    {
+      "id": 30200,
+      "name": "Ground Totem",
+      "level": 1,
+      "tier": 1,
+      "gatheringNode": false,
+      "noAttack": true,
+      "drops": []
+    }
+  ]
+}
