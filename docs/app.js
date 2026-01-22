@@ -16,6 +16,7 @@ const els = {
   cart: document.getElementById('cart'),
   materials: document.getElementById('materials'),
   btnCopy: document.getElementById('btnCopy'),
+  btnShare: document.getElementById('btnShare'),
   btnExport: document.getElementById('btnExport'),
   btnClear: document.getElementById('btnClear'),
   toggleRecursive: document.getElementById('toggleRecursive'),
@@ -25,6 +26,48 @@ const els = {
 };
 
 function fmt(n){ return new Intl.NumberFormat().format(n); }
+
+// ---- Share link helpers (base64url) ----
+function b64urlEncode(str){
+  const b64 = btoa(unescape(encodeURIComponent(str)));
+  return b64.replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+}
+function b64urlDecode(b64url){
+  const b64 = b64url.replace(/-/g,'+').replace(/_/g,'/');
+  const pad = b64.length % 4 ? '='.repeat(4 - (b64.length % 4)) : '';
+  const str = atob(b64 + pad);
+  return decodeURIComponent(escape(str));
+}
+
+// ---- Icon paths ----
+// Put your downloaded icons here (recommended):
+//   docs/assets/items/<id>.png
+//   docs/assets/mobs/<id>.png   (future use)
+// If a local icon is missing, we fall back to ROIdle-hosted paths.
+function localItemIcon(itemId){ return `./assets/items/${itemId}.png`; }
+function remoteItemIcon(itemId){
+  // Fallback candidates (try multiple in case ROIdle uses a different mount path)
+  return [
+    `https://roidle.com/assets/images/items/${itemId}.png`,
+    `https://roidle.com/seasonal/assets/images/items/${itemId}.png`,
+    `https://roidle.com/assets/items/${itemId}.png`,
+    `https://roidle.com/seasonal/assets/items/${itemId}.png`,
+  ];
+}
+
+function setItemIcon(imgEl, itemId){
+  const fallbacks = remoteItemIcon(itemId);
+  let i = -1;
+  imgEl.src = localItemIcon(itemId);
+  imgEl.onerror = () => {
+    i += 1;
+    if (i < fallbacks.length){
+      imgEl.src = fallbacks[i];
+    } else {
+      imgEl.style.visibility = 'hidden';
+    }
+  };
+}
 
 function itemName(itemId){
   const fromCatalog = state.itemsById?.[String(itemId)]?.name;
@@ -38,10 +81,6 @@ function craftKey(rec){
   const cat = (rec?.category || '').toString().trim();
   return { craft: c || '—', category: cat || '—' };
 }
-function itemIconUrl(itemId){
-  // Works when hosted on roidle.com OR any site (loads from roidle.com).
-  return `https://roidle.com/assets/images/items/${itemId}.png`;
-}
 
 // --- Data loading ---
 async function loadJson(path){
@@ -53,16 +92,11 @@ async function loadJson(path){
 function buildFilterOptions(){
   const recs = Object.values(state.recipes.recipesByOutputItemId || {});
   const crafts = new Set();
-  const cats = new Set();
-
   for (const r of recs){
     const k = craftKey(r);
     if (k.craft && k.craft !== '—') crafts.add(k.craft);
-    if (k.category && k.category !== '—') cats.add(k.category);
   }
-
   const craftList = ['All', ...Array.from(crafts).sort((a,b)=>a.localeCompare(b))];
-  const catList = ['All', ...Array.from(cats).sort((a,b)=>a.localeCompare(b))];
 
   els.filterCraft.innerHTML = '';
   for (const c of craftList){
@@ -72,12 +106,36 @@ function buildFilterOptions(){
     els.filterCraft.appendChild(opt);
   }
 
+  rebuildCategoryOptions(); // depends on current craft selection
+}
+
+function rebuildCategoryOptions(){
+  const recs = Object.values(state.recipes.recipesByOutputItemId || {});
+  const fc = els.filterCraft?.value || 'All';
+  const cats = new Set();
+
+  for (const r of recs){
+    const k = craftKey(r);
+    if (fc !== 'All' && k.craft !== fc) continue;
+    if (k.category && k.category !== '—') cats.add(k.category);
+  }
+
+  const prev = els.filterCategory?.value || 'All';
+  const catList = ['All', ...Array.from(cats).sort((a,b)=>a.localeCompare(b))];
+
   els.filterCategory.innerHTML = '';
   for (const c of catList){
     const opt = document.createElement('option');
     opt.value = c;
     opt.textContent = c;
     els.filterCategory.appendChild(opt);
+  }
+
+  // preserve selection if still available
+  if (catList.includes(prev)){
+    els.filterCategory.value = prev;
+  } else {
+    els.filterCategory.value = 'All';
   }
 }
 
@@ -96,19 +154,57 @@ async function init(){
   }
 
   buildFilterOptions();
+  restoreCartFromUrl();
   wireUI();
   render();
 }
 
+function restoreCartFromUrl(){
+  const params = new URLSearchParams(location.search);
+  const packed = params.get('cart');
+  if (!packed) return;
+  try{
+    const decoded = b64urlDecode(packed);
+    const obj = JSON.parse(decoded);
+    if (obj && typeof obj === 'object'){
+      for (const [k,v] of Object.entries(obj)){
+        const qty = Math.max(1, parseInt(v, 10) || 1);
+        state.cart.set(String(k), qty);
+      }
+    }
+  } catch(e){
+    // ignore malformed links
+  }
+}
+
+function updateUrlFromCart(){
+  const obj = Object.fromEntries([...state.cart.entries()]);
+  const params = new URLSearchParams(location.search);
+  if (Object.keys(obj).length === 0){
+    params.delete('cart');
+  } else {
+    params.set('cart', b64urlEncode(JSON.stringify(obj)));
+  }
+  const newUrl = `${location.pathname}?${params.toString()}`;
+  history.replaceState(null, '', newUrl);
+}
+
 function wireUI(){
   els.search.addEventListener('input', renderResults);
-  els.btnClear.addEventListener('click', () => { state.cart.clear(); render(); });
+  els.btnClear.addEventListener('click', () => { state.cart.clear(); updateUrlFromCart(); render(); });
 
   els.btnCopy.addEventListener('click', async () => {
     const text = computeMaterialsText();
     await navigator.clipboard.writeText(text);
     els.btnCopy.textContent = 'Copied!';
     setTimeout(()=>els.btnCopy.textContent='Copy materials', 900);
+  });
+
+  els.btnShare.addEventListener('click', async () => {
+    updateUrlFromCart();
+    await navigator.clipboard.writeText(location.href);
+    els.btnShare.textContent = 'Link copied!';
+    setTimeout(()=>els.btnShare.textContent='Copy share link', 900);
   });
 
   els.btnExport.addEventListener('click', () => {
@@ -129,7 +225,7 @@ function wireUI(){
 
   els.toggleRecursive.addEventListener('change', render);
   els.toggleChance.addEventListener('change', render);
-  els.filterCraft.addEventListener('change', renderResults);
+  els.filterCraft.addEventListener('change', () => { rebuildCategoryOptions(); renderResults(); });
   els.filterCategory.addEventListener('change', renderResults);
 }
 
@@ -184,9 +280,9 @@ function renderResults(){
     const img = document.createElement('img');
     img.className = 'thumb';
     img.loading = 'lazy';
-    img.src = itemIconUrl(rec.outputItemId);
+    setItemIcon(img, rec.outputItemId);
     img.alt = recipeName(rec);
-    img.onerror = () => { img.style.visibility = 'hidden'; };
+    
 
     const meta = document.createElement('div');
     meta.className = 'meta';
@@ -212,6 +308,7 @@ function renderResults(){
     btn.addEventListener('click', () => {
       const id = String(rec.outputItemId);
       state.cart.set(id, (state.cart.get(id) || 0) + 1);
+      updateUrlFromCart();
       render();
     });
 
@@ -243,9 +340,9 @@ function renderCart(){
     const img = document.createElement('img');
     img.className = 'thumb';
     img.loading = 'lazy';
-    img.src = itemIconUrl(outputId);
+    setItemIcon(img, outputId);
     img.alt = rec ? recipeName(rec) : itemName(outputId);
-    img.onerror = () => { img.style.visibility = 'hidden'; };
+    
 
     const text = document.createElement('div');
     text.className = 'cartText';
@@ -283,6 +380,7 @@ function renderCart(){
     input.addEventListener('change', () => {
       const v = Math.max(1, parseInt(input.value || '1', 10));
       state.cart.set(String(outputId), v);
+      updateUrlFromCart();
       render();
     });
 
@@ -291,6 +389,7 @@ function renderCart(){
     del.textContent = 'Remove';
     del.addEventListener('click', () => {
       state.cart.delete(String(outputId));
+      updateUrlFromCart();
       render();
     });
 
@@ -376,6 +475,7 @@ function renderMaterials(){
     els.materials.className = 'materials muted';
     els.materials.textContent = 'Add items to see totals.';
     els.btnCopy.disabled = true;
+    els.btnShare.disabled = true;
     els.btnExport.disabled = true;
     return;
   }
@@ -394,9 +494,9 @@ function renderMaterials(){
     const img = document.createElement('img');
     img.className = 'thumb';
     img.loading = 'lazy';
-    img.src = itemIconUrl(m.itemId);
+    setItemIcon(img, m.itemId);
     img.alt = m.name;
-    img.onerror = () => { img.style.visibility = 'hidden'; };
+    
 
     const name = document.createElement('div');
     name.className = 'matName';
@@ -415,6 +515,7 @@ function renderMaterials(){
   }
 
   els.btnCopy.disabled = mats.length === 0;
+  els.btnShare.disabled = mats.length === 0;
   els.btnExport.disabled = mats.length === 0;
 }
 

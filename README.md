@@ -27,3 +27,7 @@ python tools/normalize_crafts.py
 ```
 
 Then commit the updated `docs/data/craft_recipes.json`.
+
+
+## Item icons
+Put item icons in `docs/assets/items/<itemId>.png` to guarantee icons load on GitHub Pages.

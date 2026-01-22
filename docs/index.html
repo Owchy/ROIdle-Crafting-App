@@ -53,6 +53,7 @@
       <div id="cart" class="cart empty muted">No items yet. Search on the left and add some.</div>
       <div class="row actions">
         <button id="btnCopy" class="btn" disabled>Copy materials</button>
+        <button id="btnShare" class="btn secondary" disabled>Copy share link</button>
         <button id="btnExport" class="btn secondary" disabled>Export JSON</button>
       </div>
     </section>
@@ -64,7 +65,7 @@
   </main>
 
   <footer class="wrap footer muted">
-    <span>Icons are loaded from ROIdle paths (<code>/assets/images/items</code> and <code>/assets/images/mobs</code>).</span>
+    <span>Icons load from <code>docs/assets/items/&lt;id&gt;.png</code> (recommended). If missing, the app falls back to ROIdle-hosted icons automatically.</span>
   </footer>
 
   <script src="./app.js"></script>
